@@ -641,19 +641,15 @@ int main() {
         }
 
 
-        // Tokenize the input
 
         TokenList tokens = NULL;
         ErrorType error = tokenize(input, &tokens);
-        // showPostfix(tokens);
 
         if (error) {
             handleErrors(error);
             return 1;
         }
 
-
-        // Convert to postfix
 
         TokenList postfix = NULL;
         error = toPostfix(tokens, &postfix);
@@ -664,14 +660,6 @@ int main() {
             handleErrors(error);
             return 1;
         }
-
-
-        // printf("Postfix : \n");
-
-        // showPostfix(postfix);
-
-
-        // Evaluate the postfix
 
         float result = 0;
 
