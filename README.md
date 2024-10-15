@@ -29,7 +29,7 @@ Each valid element is tokenized as one of the following :
 
 ## Translation to **postfix** notation
 
-> ![NOTE]
+> [!NOTE]
 > As the expression is translated to a *postfix* notation, the priority of operation is unambiguous and there is no need of parenthesis
 
 *Postfix* notation places the operator after the arguments while the regular *infix* notation places it in between
@@ -52,7 +52,7 @@ which translates to *postfix* as : $~~2~4\times5~+$
 
 | Steps     | 0                                              | 1                                              | 2                                              | 3                                        | 4                                         | 5                                         | 6
 | :---:     | :---:                                          | :-:                                            | :-:                                            | :-:                                      | :-:                                       | :-:                                       | :-:
-| **Stack** | $\begin{matrix}2\\4\\\times\\5\\+\end{matrix}$ | $\begin{matrix}~\\4\\\times\\5\\+\end{matrix}$ | $\begin{matrix}~\\~\\\times\\5\\+\end{matrix}$ |$\begin{matrix}~\\~\\8\\5\\+\end{matrix}$ | $\begin{matrix}~\\~\\~\\5\\+\end{matrix}$ | $\begin{matrix}~\\~\\~\\~\\+\end{matrix}$ | $\begin{matrix}~\\~\\~\\~\\13\end{matrix}$ 
+| **Stack** | $\begin{matrix}2\\\4\\\\times\\\5\\\+\end{matrix}$ | $\begin{matrix}~\\\4\\\\times\\\5\\\+\end{matrix}$ | $\begin{matrix}~\\\~\\\\times\\\5\\\+\end{matrix}$ |$\begin{matrix}~\\\~\\\8\\\5\\\+\end{matrix}$ | $\begin{matrix}~\\\~\\\~\\\5\\\+\end{matrix}$ | $\begin{matrix}~\\\~\\\~\\\~\\\+\end{matrix}$ | $\begin{matrix}~\\\~\\\~\\\~\\\13\end{matrix}$ 
 | **Buffer**| $[~]$                                          | $[ 2 ]$                                        | $[2, 4]$                                       | $[~]$                                    | $[8]$                                     | $[8, 5]$                                  | $[~]$
 
 At step $3$ and $6$, when there is an operator, we can just evaluate it with the value in the buffer and put he result back in the stack
